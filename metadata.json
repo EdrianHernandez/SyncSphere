@@ -1,0 +1,5 @@
+{
+  "name": "SyncSphere",
+  "description": "A virtual coworking space for remote teams to collaborate, see status, and hop into audio/video rooms.",
+  "requestFramePermissions": []
+}
