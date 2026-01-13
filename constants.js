@@ -1,6 +1,6 @@
-import { User, Room, UserStatus, Message } from './types';
+import { UserStatus } from './types.js';
 
-export const USERS: User[] = [
+export const USERS = [
   {
     id: 'u1',
     name: 'Sarah Jenkins',
@@ -48,7 +48,7 @@ export const USERS: User[] = [
   }
 ];
 
-export const INITIAL_ROOMS: Room[] = [
+export const INITIAL_ROOMS = [
   {
     id: 'r1',
     name: 'The Watercooler',
@@ -99,7 +99,7 @@ export const INITIAL_ROOMS: Room[] = [
   }
 ];
 
-export const MOCK_MESSAGES: Message[] = [
+export const MOCK_MESSAGES = [
   { id: 'm1', userId: 'u1', content: 'Hey everyone! The roadmap review starts in 30 mins.', timestamp: '10:00 AM' },
   { id: 'm2', userId: 'u2', content: 'Thanks Sarah, I will be there.', timestamp: '10:02 AM' },
   { id: 'm3', userId: 'u4', content: 'Anyone want to grab tacos for lunch?', timestamp: '11:45 AM' },
