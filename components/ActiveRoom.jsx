@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
-import { Room, User } from '../types';
 import { 
   Mic, MicOff, Video, VideoOff, PhoneOff, 
   Monitor, Settings, Maximize2, Minimize2, 
   Users, MessageSquare 
 } from 'lucide-react';
 
-interface ActiveRoomProps {
-  room: Room;
-  participants: User[];
-  currentUser: User;
-  onLeave: () => void;
-}
-
-export const ActiveRoom: React.FC<ActiveRoomProps> = ({ room, participants, currentUser, onLeave }) => {
+export const ActiveRoom = ({ room, participants, currentUser, onLeave }) => {
   const [isMinimized, setIsMinimized] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isVideoOn, setIsVideoOn] = useState(room.type === 'video');
