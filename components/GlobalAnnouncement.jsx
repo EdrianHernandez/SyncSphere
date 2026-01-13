@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Megaphone } from 'lucide-react';
 
-export const GlobalAnnouncement: React.FC = () => {
+export const GlobalAnnouncement = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   if (!isVisible) return null;
