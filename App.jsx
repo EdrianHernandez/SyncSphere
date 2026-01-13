@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
-import { UserStatusSidebar } from './components/UserStatusSidebar';
-import { RoomGrid } from './components/RoomGrid';
-import { GlobalAnnouncement } from './components/GlobalAnnouncement';
-import { ChatPreview } from './components/ChatPreview';
-import { ActiveRoom } from './components/ActiveRoom';
-import { USERS, INITIAL_ROOMS, MOCK_MESSAGES } from './constants';
-import { Room, User } from './types';
+import { UserStatusSidebar } from './components/UserStatusSidebar.js';
+import { RoomGrid } from './components/RoomGrid.js';
+import { GlobalAnnouncement } from './components/GlobalAnnouncement.js';
+import { ChatPreview } from './components/ChatPreview.js';
+import { ActiveRoom } from './components/ActiveRoom.js';
+import { USERS, INITIAL_ROOMS, MOCK_MESSAGES } from './constants.js';
 import { Menu } from 'lucide-react';
 
-const App: React.FC = () => {
-  const [users] = useState<User[]>(USERS);
-  const [rooms, setRooms] = useState<Room[]>(INITIAL_ROOMS);
+const App = () => {
+  const [users] = useState(USERS);
+  const [rooms, setRooms] = useState(INITIAL_ROOMS);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
   // Assume first user is current user for demo
   const currentUser = users[0];
 
-  const handleJoinRoom = (roomId: string) => {
+  const handleJoinRoom = (roomId) => {
     setRooms(prevRooms => prevRooms.map(room => {
       // Remove user from all other rooms
       const cleanParticipants = room.participants.filter(id => id !== currentUser.id);
@@ -39,7 +38,7 @@ const App: React.FC = () => {
   // Check if current user is in any room
   const activeRoom = rooms.find(r => r.participants.includes(currentUser.id));
   const activeParticipants = activeRoom 
-    ? activeRoom.participants.map(id => users.find(u => u.id === id)).filter(Boolean) as User[]
+    ? activeRoom.participants.map(id => users.find(u => u.id === id)).filter(Boolean)
     : [];
 
   return (
