@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { UserStatusSidebar } from './components/UserStatusSidebar.js';
-import { RoomGrid } from './components/RoomGrid.js';
-import { GlobalAnnouncement } from './components/GlobalAnnouncement.js';
-import { ChatPreview } from './components/ChatPreview.js';
-import { ActiveRoom } from './components/ActiveRoom.js';
+import { UserStatusSidebar } from './components/UserStatusSidebar.jsx';
+import { RoomGrid } from './components/RoomGrid.jsx';
+import { GlobalAnnouncement } from './components/GlobalAnnouncement.jsx';
+import { ChatPreview } from './components/ChatPreview.jsx';
+import { ActiveRoom } from './components/ActiveRoom.jsx';
 import { USERS, INITIAL_ROOMS, MOCK_MESSAGES } from './constants.js';
 import { Menu } from 'lucide-react';
 
