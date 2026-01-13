@@ -1,17 +1,9 @@
 import React from 'react';
-import { Room, User } from '../types';
 import { Video, Mic, VolumeX, Users, ArrowRight } from 'lucide-react';
 
-interface RoomGridProps {
-  rooms: Room[];
-  users: User[];
-  currentUser: User;
-  onJoinRoom: (roomId: string) => void;
-}
-
-export const RoomGrid: React.FC<RoomGridProps> = ({ rooms, users, currentUser, onJoinRoom }) => {
+export const RoomGrid = ({ rooms, users, currentUser, onJoinRoom }) => {
   
-  const getRoomIcon = (type: Room['type']) => {
+  const getRoomIcon = (type) => {
     switch (type) {
       case 'video': return <Video size={18} className="text-indigo-500" />;
       case 'audio': return <Mic size={18} className="text-emerald-500" />;
@@ -19,8 +11,8 @@ export const RoomGrid: React.FC<RoomGridProps> = ({ rooms, users, currentUser, o
     }
   };
 
-  const getParticipants = (participantIds: string[]) => {
-    return participantIds.map(id => users.find(u => u.id === id)).filter(Boolean) as User[];
+  const getParticipants = (participantIds) => {
+    return participantIds.map(id => users.find(u => u.id === id)).filter(Boolean);
   };
 
   return (
