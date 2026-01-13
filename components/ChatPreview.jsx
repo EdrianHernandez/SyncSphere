@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
-import { Message, User } from '../types';
 import { MessageSquare, ChevronUp, ChevronDown, Send, Paperclip } from 'lucide-react';
 
-interface ChatPreviewProps {
-  messages: Message[];
-  users: User[];
-  currentUser: User;
-}
-
-export const ChatPreview: React.FC<ChatPreviewProps> = ({ messages, users, currentUser }) => {
+export const ChatPreview = ({ messages, users, currentUser }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputText, setInputText] = useState('');
 
-  const getUser = (id: string) => users.find(u => u.id === id);
+  const getUser = (id) => users.find(u => u.id === id);
 
   return (
     <div 
