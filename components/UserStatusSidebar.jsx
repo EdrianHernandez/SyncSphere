@@ -1,14 +1,9 @@
 import React from 'react';
-import { User, UserStatus } from '../types';
+import { UserStatus } from '../types.js';
 import { Circle, Search, MoreHorizontal } from 'lucide-react';
 
-interface UserStatusSidebarProps {
-  users: User[];
-  currentUser: User;
-}
-
-export const UserStatusSidebar: React.FC<UserStatusSidebarProps> = ({ users, currentUser }) => {
-  const getStatusColor = (status: UserStatus) => {
+export const UserStatusSidebar = ({ users, currentUser }) => {
+  const getStatusColor = (status) => {
     switch (status) {
       case UserStatus.Active: return 'text-green-500 fill-green-500';
       case UserStatus.Busy: return 'text-red-500 fill-red-500';
@@ -18,7 +13,7 @@ export const UserStatusSidebar: React.FC<UserStatusSidebarProps> = ({ users, cur
     }
   };
 
-  const getStatusLabel = (status: UserStatus) => {
+  const getStatusLabel = (status) => {
     switch (status) {
       case UserStatus.Active: return 'Online';
       case UserStatus.Busy: return 'Do Not Disturb';
